@@ -9,37 +9,10 @@ var options = {
 var AT = require('africastalking')(options);
 var port = process.env.PORT || 80;
 
-app.post('/mboga-ussd', new AT.USSD((params, next) => {
-    let endSession = false;
-    let message = '';
-
-    const session = sessions.get(params.sessionId);
-    const user = db.getUserByPhone(params.phoneNumber);
-
-    if (params.text === '') {
-        message = "Welcome to Nat Oil \n";
-        message += "1: For account info \n";
-        message += "2: For lost gas cylinder";
-
-    } else if (params.text === '1') {
-        message = user.getInfo();
-        endSession = true;
-
-    } else if (params.text === '2') {
-        message = "Enter 1 for recovery \n";
-        message += "Enter 2 for lost and found";
-        endSession = true;
-
-    } else {
-        message = "Invalid option";
-        endSession = true;
-    }
-
-    next({
-        response: message,
-        endSession: endSession
-    });
-}));
+app.post('/mboga-ussd', (req, res) =>{
+    console.log(req);
+    res.end();
+});
 
 app.listen(port);
 
