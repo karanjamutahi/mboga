@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Mboga",
   "scripts": {
-    "start": "node server",
+    "start": "node App/server",
     "watch": "node_modules\\.bin\\nodemon App\\server"
   },
   "engines": {
