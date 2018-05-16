@@ -6,8 +6,8 @@ if (os.platform() === 'win32'){
 }
 
 else{
-    user = require('./App/models/users.js');
-    menus = require('./App/views/menus.js');
+    user = require('../models/users.js');
+    menus = require('../views/menus.js');
 }
 
 

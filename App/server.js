@@ -14,7 +14,7 @@ if (os.platform() === 'win32'){
 
 else{
     console.log("Linux");
-    control = require('./App/controllers/USSDcontroller.js');
+    control = require('./controllers/USSDcontroller.js');
 }
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -25,7 +25,7 @@ var port = process.env.PORT || 80;
 
 app.post('/mboga-ussd', control.USSDControl);
 
-app.listen(port);
+app.listen(80);
 
 
 
