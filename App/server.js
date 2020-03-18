@@ -1,5 +1,5 @@
 var express = require('express');
-var ll = '12menofGod';
+var ll = process.env.SECRET_KEY;
 var app = express(); 
 var bodyParser = require('body-parser');
 let os = require('os');
